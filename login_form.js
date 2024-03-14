@@ -20,9 +20,6 @@ function SignUpForm(event){
     });
     
 
-    sendToDataBase(signUpForm.get('email'),signUpForm.get('password'))
 
 }
-function sendToDataBase(email,password){
-    // the email and password is the thing that would be sent 
-}
+
