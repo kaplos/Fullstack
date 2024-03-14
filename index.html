@@ -6,10 +6,8 @@
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="index.css" />
-    <script src="signup2.js"></script>
+    <script src="signup_form.js"></script>
     <title>Brooklyn Underground Fitness</title>
   </head>
   <body>
@@ -20,17 +18,18 @@
         <li class="link"><a href="index3.html">Home</a></li>
         <li class="link"><a href="gyminfo.html">Gym Info</a></li>
         <li class="link"><a href="terms_and_conditions.html">Contact Us</a></li>
-        <li class="link"><a href="blog.html">Blog</a></li>
+        <li class="link"><a href="Member_signup.html">Sign Up </a></li>
       </ul>
       
     </nav>
-<!-- Creating the header class-->
+<!-- Main header class -->
 
     <header class="section__container header__container">
       <div class="header__content">
         <h4>Stop Making Excuses </h4>
         <h1><span>Brooklyn </span> UnderGround</h1>
       </div>
+      
       <!--Adding header image-->
       <div class="header__image">
         <img src="brooklynbridge.jpg" alt="header" />
@@ -43,7 +42,8 @@
       <div class="class__image">
         <span class="bg__blur"></span>
   </section>
-<!-- Creating section for joining the gym-->
+
+<!-- section for joining the gym -->
 <section class="section__container join__container">
       <h2 class="section__header">WHY JOIN US ?</h2>
       
@@ -96,7 +96,7 @@
               <h4>Billed Monthly</h4>
               <h3>$30</h3>
               <p>
-                  <i class="ri-checkbox-circle-line"></i>
+                  <i class="ri-c`heckbox-circle-line"></i>
                   24/7 Access 
               </p>
               <p>
@@ -104,7 +104,8 @@
                   Billed Monthly
               </p>
           </div>
-          <!--Saving the info from pricing to checkout page-->
+          <!-- Saving the info from pricing to checkout page -->
+           <!-- To Do: connect each join now button to checkout form -->
           <button class="btn price__btn" onclick="redirectToCheckout(30)">Join Now</button>
       </div>
       <div class="price__card">
@@ -141,6 +142,7 @@
       </div>
   </div>
 </section>
+
    <!--Script for saving users membership price-->
 <script>
   function redirectToCheckout(price) {
@@ -151,11 +153,11 @@
 
 
     
-   <!--adding google maps to webpage-->
+   <!-- adding google maps to webpage -->
     <div class="map-container">
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189.25927539515664!2d-74.0023834!3d40.626609!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c245390f533585%3A0x292be5bae9bdf964!2s1255%2065th%20St%2C%20Brooklyn%2C%20NY%2011219!5e0!3m2!1sen!2sus!4v1705955826261!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-   <!--Creating the footer, social links, -->
+   <!-- Creating the footer, social links, etc -->
     <footer class="section__container footer__container">
       <span class="bg__blur"></span>
       <span class="bg__blur footer__blur"></span>
@@ -180,8 +182,6 @@
         <a href="#">BMI Calculator</a>
       </div>
     </footer>
-    <div class="footer__bar">
-      Copyright © 2024 Brooklyn Underground Fitness. All rights reserved.
-    </div>
+    
   </body>
 </html>

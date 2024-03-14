@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
+/* Root colors , measurements */
 :root {
   --primary-color: #111317;
   --primary-color-light: #1f2125;
@@ -8,7 +8,7 @@
   --secondary-color-dark: #d79447;
   --text-light: #d1d5db;
   --white: #ffffff;
-  --max-width: 7500%;
+  --max-width: 100%;
 }
 
 * {
@@ -49,10 +49,10 @@
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 2% 1%;
+  padding: .2% 10%;
   
 }
-
+/* Main header  */
 .section__header {
   margin-bottom: 10%;
   font-size: 225%;
@@ -67,7 +67,7 @@
   text-align: center;
   color: var(--text-light);
 }
-
+/* Adjust "join now" button */
 .btn {
   padding: 1rem 2rem;
   outline: none;
@@ -79,7 +79,7 @@
   cursor: pointer;
   transition: 0.3s;
 }
-
+/* "join now" hover highlight*/
 .btn:hover {
   background-color: var(--secondary-color-dark);
 }
@@ -103,7 +103,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--primary-color);
 }
-
+/* Main Nav bar  */
 nav {
   max-width: var(--max-width);
   margin: auto;
@@ -114,18 +114,14 @@ nav {
   gap: 2rem;
 }
 
-.nav__logo {
-  max-width: 200px;
-  
-}
-
 .nav__links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  text-align: center;
+  margin-left: 10%;
 }
-
+/* Nav links urderline glow */
 .link a {
   position: relative;
   padding-bottom: 0.75rem;
@@ -149,19 +145,19 @@ nav {
 
 .header__container {
   position: relative;
-  padding-top: 2rem;
+  padding-top: 2%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 2rem;
+ 
 }
-
+/* "Fitness" styling header*/
 .header__container::before {
   content: "FITNESS";
   position: absolute;
-  bottom: 5rem;
-  right: 20rem;
-  font-size: 10rem;
+  bottom: 45%;
+  right: 50%;
+  font-size: 900%;
   font-weight: 700;
   line-height: 7rem;
   color: var(--white);
@@ -169,26 +165,21 @@ nav {
   z-index: -1;
 }
 
-.header__blur {
-  bottom: 5rem;
-  right: 0;
-}
 
 .header__content h4 {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+  margin-bottom: 1%;
+  font-size: 150%;
   color: var(--secondary-color);
 }
-
+/* "Brooklyn UnderGround" styling Main header*/
 .header__content h1 {
-  margin-bottom: 1rem;
-  font-size: 5rem;
+  margin-bottom: 30%;
+  font-size: 550%;
   font-weight: 700;
-  line-height: 6rem;
+  line-height: 100%;
   color: var(--white);
 }
-
+/* "Brooklyn" styling header*/
 .header__content h1 span {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px var(--white);
@@ -203,23 +194,11 @@ nav {
   position: relative;
 }
 
-.header__image::before {
-  content: "o";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 40rem;
-  font-weight: 400;
-  line-height: 20rem;
-  color: var(--secondary-color);
-  opacity: 0.1;
-  z-index: -1;
-}
 
 .header__image img {
-  max-width: 350px;
-  margin: auto;
+  max-width: 70%;
+  margin: 10%;
+  border-radius: 50%;
 }
 
 .explore__header {
@@ -384,7 +363,7 @@ nav {
   font-weight: 500;
   color: var(--white);
 }
-
+/* join card payment*/
 .join__card p {
   color: var(--text-light);
 }
@@ -596,8 +575,8 @@ nav {
 
   .join__grid {
     width: 100%;
-    margin: 0;
-    bottom: -20rem;
+    margin: 10%;
+    bottom: -10rem;
   }
 
   .price__grid {
