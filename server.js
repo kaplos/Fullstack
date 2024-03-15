@@ -2,8 +2,10 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const sql = require('mssql');
+const cors = require('cors');
 
 const app = express();
+app.use(cors())
 const port = 3001; //changed port to 3001 to avoid conflict with React's default port 3000
 const secretKey = 'classProject';
 
