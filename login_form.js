@@ -10,7 +10,7 @@ function SignUpForm(event){
         },
         body: JSON.stringify(data),
     })
-    // .then(response => response.json())
+    .then(response => response.json())
     .then(data => {
         localStorage.setItem('member-token',data.token);
     })
