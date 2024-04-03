@@ -26,6 +26,8 @@ const dbConfig = {
     }
 };
 
+
+
 app.use(express.json()); // for parsing application/json
 
 app.post('/signUp', async (req, res) => {
