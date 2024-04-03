@@ -1,0 +1,168 @@
+:root {
+  --primary-color: #111317;
+  --primary-color-light: #1f2125;
+  --primary-color-extra-light: #35373b;
+  --secondary-color: #f9ac54;
+  --secondary-color-dark: #d79447;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 100%;
+}
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.header__container {
+  position:relative;
+  padding-bottom: 40%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+
+}
+
+.container {
+  background-color: var(--primary-color-light);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 50x;
+  padding-bottom: 150px;
+  height: 100px;
+  max-width: var(--max-width);
+  margin-bottom: 500px;
+  margin-right: 40%;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color-extra-light);
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 500px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+
+body {
+ 
+  background-color: var(--primary-color);
+  background-position: center; 
+  background-image: url(brooklynbridge.jpg);
+  color: var(--text-light);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+label {
+  color: var(--white);
+  display: block;
+  font-size: 14px;
+  width: 150px;
+  margin-bottom: 5px;
+}
+
+button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form {
+  background-color: var(--primary-color-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 70px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+
+nav {
+  position: fixed; /* Position the nav bar */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0; /* Position it at the left of the viewport */
+  width: 100%; /* Make it span the full width */
+  background-color: var(--primary-color); /* Background color */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  
+ 
+}
+
+.link a {
+  position: relative;
+  padding-bottom: 0.75rem;
+  color: var(--white);
+  margin-right: 20px;
+  text-decoration: none; 
+}
+
+.link a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.link a:hover::after {
+  width: 50%;
+}
+
+
+
+
+
+
+
