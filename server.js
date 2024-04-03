@@ -29,18 +29,30 @@ const dbConfig = {
 
 
 app.use(express.json()); // for parsing application/json
-
+    // app.post('/signUp',(req,res)=>{
+    //     res.setHeader('Set-Cookie', 'token=i am a token;');
+    //     res.json({ redirectUrl: '/Fullstack/index.html' });
+    // })
+    // app.get('/print',(req,res)=>{
+    //     console.log(req.headers);
+    // })
 app.post('/signUp', async (req, res) => {
-    try {
-        const hashedPassword = await hashPassword(req.body.password);
-        const email = req.body.email;
-        const memberId = await sendToDataBase(email, hashedPassword);
-        const token = jwt.sign({ memberId }, secretKey);
-        // console.log(token);
-        res.send({ token });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('An error occurred');
+    if(await checkIfContained(req.body.email)){
+        let token = await jwtSign(await login(req.body.email,req.body.password))
+        res.status(200).json({ token: token, redirectUrl: '/index.html' });
+    }else {
+        try {
+            const hashedPassword = await hashPassword(req.body.password);
+            const email = req.body.email;
+            const memberId = await sendToDataBase(email, hashedPassword);
+            let token = await jwtSign(memberId)
+            // console.log(token);
+            res.send({ token });
+            res.redirect('/index.html');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('An error occurred');
+        }
     }
 });
 app.post('/checkout',async (req,res)=>{
@@ -59,8 +71,10 @@ app.post('/checkout',async (req,res)=>{
     })
 })
 try{
-    const order = await paypalClient.execute(request);
+    (async ()=>{
+        const order = await paypalClient.execute(request);
     console.log(order);
+    });
 }catch(e){
     req.send(500).json({error :e.message})
 
@@ -86,5 +100,31 @@ async function sendToDataBase(email, password) {
         // console.log(result.recordset[0].memberID);
     return result.recordset[0].memberID;
 }
-
+async function jwtSign(memberId){
+    return jwt.sign({ memberId }, secretKey);
+}
+async function checkIfContained(email){
+    let pool = await sql.connect(dbConfig);
+    const result = await pool.request()
+        .input('Email', sql.VarChar, email)
+        .query('SELECT email FROM dbo.Members WHERE email = @Email');
+    return result.recordset.length > 0;
+} 
+async function login(email, password){
+    let pool = await sql.connect(dbConfig);
+    const result = await pool.request()
+        .input('Email', sql.VarChar, email)
+        .input('Password', sql.VarChar, password)
+        .query('SELECT email, password FROM dbo.Members WHERE email = @Email AND password = @Password');
+        return result.recordset.length > 0 ? result.recordset[0].memberID : null;
+    }
 // Function `getJwtSigned` seems to be unused, you might want to remove or implement it based on your needs.
+
+// async function getTopFiveRows() {
+//     let pool = await sql.connect(dbConfig);
+//     const result = await pool.request()
+//         .query('SELECT TOP 5 * FROM dbo.Members');
+//     console.log(result.recordset);
+// }
+
+// (async () =>{await getTopFiveRows()})
